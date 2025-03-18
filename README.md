@@ -47,8 +47,8 @@ df['Gender'] = le.fit_transform(df['Gender'])**  --> LabelEncoder is used to con
 ### Clustering by Age, Income, Spending, Work Expirence and  Family Size
 
 <p align="center">
-  <img src="KMEAN1/img0.png" alt="Image 1" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="KMEAN1/img1.png" alt="Image 2" width="320" height="240" style="margin-right: 20px;"/>
+  <img src="KMEAN1/img0.png" alt="Image 1" width="320" height="240" "/>
+  <img src="KMEAN1/img1.png" alt="Image 2" width="320" height="240" "/>
   <img src="KMEAN1/img2.png" alt="Image 3" width="320" height="240" />
 </p>
 
