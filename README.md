@@ -53,14 +53,14 @@ df['Gender'] = le.fit_transform(df['Gender'])**  --> LabelEncoder is used to con
 </p>
 
 <p align="center">
-  <img src="KMEAN1/img3.png" alt="Image 3" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="KMEAN1/img4.png" alt="Image 4" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="KMEAN1/img5.png" alt="Image 5" width="320" height="240" />
+  <img src="KMEAN1/img3.png" alt="Image 3" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="KMEAN1/img4.png" alt="Image 4" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="KMEAN1/img5.png" alt="Image 5" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="KMEAN1/img6.png" alt="Image 6" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="KMEAN1/img7.png" alt="Image 7" width="320" height="240" style="margin-right: 20px;"/>
+  <img src="KMEAN1/img6.png" alt="Image 6" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="KMEAN1/img7.png" alt="Image 7" width="260" height="240" style="margin-right: 20px;"/>
 </p>
 
 
@@ -71,19 +71,19 @@ However, adding too many features can also create challenges. As the number of f
 ### Clustering by Income and Spending
 
 <p align="center">
-  <img src="INC+SPEN/img1.png" alt="Image 1" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="INC+SPEN/img2.png" alt="Image 2" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="INC+SPEN/img3.png" alt="Image 3" width="320" height="240" />
+  <img src="INC+SPEN/img1.png" alt="Image 1" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="INC+SPEN/img2.png" alt="Image 2" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="INC+SPEN/img3.png" alt="Image 3" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="INC+SPEN/img4.png" alt="Image 4" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="INC+SPEN/img5.png" alt="Image 5" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="INC+SPEN/img6.png" alt="Image 6" width="320" height="240" />
+  <img src="INC+SPEN/img4.png" alt="Image 4" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="INC+SPEN/img5.png" alt="Image 5" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="INC+SPEN/img6.png" alt="Image 6" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="INC+SPEN/img7.png" alt="Image 7" width="320" height="240" style="margin-right: 20px;"/>
+  <img src="INC+SPEN/img7.png" alt="Image 7" width="260" height="240" style="margin-right: 20px;"/>
 </p>
 
 Clustering by income and spending can help identify distinct customer segments based on their financial behavior. By grouping individuals with similar annual incomes and spending scores, K-Means can uncover patterns, such as high-income, low-spending customers or low-income, high-spending customers. This approach allows businesses to tailor marketing strategies, products, and services to specific groups, ensuring more targeted and effective customer engagement. In this case the Income and Spending plot have been divided into quarters by the clusters.
@@ -92,19 +92,19 @@ Clustering by income and spending can help identify distinct customer segments b
 
 <p align="center">
   
-  <img src="AGE+SPEN/img1.png" alt="Image 1" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="AGE+SPEN/img2.png" alt="Image 2" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="AGE+SPEN/img3.png" alt="Image 3" width="320" height="240" />
+  <img src="AGE+SPEN/img1.png" alt="Image 1" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="AGE+SPEN/img2.png" alt="Image 2" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="AGE+SPEN/img3.png" alt="Image 3" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="AGE+SPEN/img4.png" alt="Image 4" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="AGE+SPEN/img5.png" alt="Image 5" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="AGE+SPEN/img6.png" alt="Image 6" width="320" height="240" />
+  <img src="AGE+SPEN/img4.png" alt="Image 4" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="AGE+SPEN/img5.png" alt="Image 5" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="AGE+SPEN/img6.png" alt="Image 6" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="AGE+SPEN/img7.png" alt="Image 7" width="320" height="240" style="margin-right: 20px;"/>
+  <img src="AGE+SPEN/img7.png" alt="Image 7" width="260" height="240" style="margin-right: 20px;"/>
 </p>
 
 Clustering by age and spending helps identify customer segments based on their life stage and purchasing behavior. For example, younger customers may have a higher spending score due to lifestyle or disposable income, while older customers might have more conservative spending habits. By grouping individuals in this way, businesses can better target age-appropriate products, services, or marketing campaigns to specific groups, enhancing customer engagement and satisfaction.
@@ -112,19 +112,19 @@ Clustering by age and spending helps identify customer segments based on their l
 ### Clustering by Gender and Spending
 
 <p align="center">
-  <img src="GEN+SPEN/img1.png" alt="ImGEN 1" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="GEN+SPEN/img2.png" alt="ImGEN 2" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="GEN+SPEN/img3.png" alt="ImGEN 3" width="320" height="240" />
+  <img src="GEN+SPEN/img1.png" alt="ImGEN 1" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="GEN+SPEN/img2.png" alt="ImGEN 2" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="GEN+SPEN/img3.png" alt="ImGEN 3" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="GEN+SPEN/img4.png" alt="ImGEN 4" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="GEN+SPEN/img5.png" alt="ImGEN 5" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="GEN+SPEN/img6.png" alt="ImGEN 6" width="320" height="240" />
+  <img src="GEN+SPEN/img4.png" alt="ImGEN 4" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="GEN+SPEN/img5.png" alt="ImGEN 5" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="GEN+SPEN/img6.png" alt="ImGEN 6" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="GEN+SPEN/img7.png" alt="ImGEN 7" width="320" height="240" style="margin-right: 20px;"/>
+  <img src="GEN+SPEN/img7.png" alt="ImGEN 7" width="260" height="240" style="margin-right: 20px;"/>
 </p>
 
 In this case, where there are more men but spending and income are similar between genders, clustering by gender and spending might not reveal significant differences in financial behavior. Since both genders have similar spending patterns and income levels, the clusters could be more influenced by other factors, such as age or family size, rather than gender alone. This suggests that, in this particular dataset, gender may not be a strong driver of spending behavior, and businesses might need to focus on other characteristics for more effective segmentation.
@@ -136,14 +136,14 @@ However, DBSCAN does have its drawbacks. It is sensitive to the choice of two ke
 ### Results 
 
 <p align="center">
-  <img src="DBSCAN/img1.png" alt="ImGEN 1" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="DBSCAN/img2.png" alt="ImGEN 2" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="DBSCAN/img3.png" alt="ImGEN 3" width="320" height="240" />
+  <img src="DBSCAN/img1.png" alt="ImGEN 1" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="DBSCAN/img2.png" alt="ImGEN 2" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="DBSCAN/img3.png" alt="ImGEN 3" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="DBSCAN/img4.png" alt="ImGen 4" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="DBSCAN/img5.png" alt="ImGEN 5" width="320" height="240" style="margin-right: 20px;"/>
+  <img src="DBSCAN/img4.png" alt="ImGen 4" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="DBSCAN/img5.png" alt="ImGEN 5" width="260" height="240" style="margin-right: 20px;"/>
 </p>
 
 DBSCAN didn’t work well with the customer data because the dataset contained clusters with varying densities, which DBSCAN struggles to handle. Additionally, the algorithm’s performance is highly sensitive to the choice of parameters like eps and min_samples, and if these were not correctly tuned, it could either merge distinct groups or classify too many points as noise. The customer data also had multiple features, making it high-dimensional, and DBSCAN struggles in higher dimensions due to the diminishing relevance of "neighborhood" relationships. Furthermore, overlapping clusters in the data, where customer segments shared characteristics, made it difficult for DBSCAN to accurately separate them, leading to poor clustering results.
@@ -155,19 +155,19 @@ Hierarchical Clustering offers the advantage of not requiring a predefined numbe
 ### Results 
 
 <p align="center">
-  <img src="Heirarchical Clustering/img1.png" alt="ImGEN 1" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="Heirarchical Clustering/img2.png" alt="ImGEN 2" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="Heirarchical Clustering/img3.png" alt="ImGEN 3" width="320" height="240" />
+  <img src="Heirarchical Clustering/img1.png" alt="ImGEN 1" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="Heirarchical Clustering/img2.png" alt="ImGEN 2" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="Heirarchical Clustering/img3.png" alt="ImGEN 3" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="Heirarchical Clustering/img4.png" alt="ImGEN 4" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="Heirarchical Clustering/img5.png" alt="ImGEN 5" width="320" height="240" style="margin-right: 20px;"/>
-  <img src="Heirarchical Clustering/img6.png" alt="ImGEN 6" width="320" height="240" />
+  <img src="Heirarchical Clustering/img4.png" alt="ImGEN 4" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="Heirarchical Clustering/img5.png" alt="ImGEN 5" width="260" height="240" style="margin-right: 20px;"/>
+  <img src="Heirarchical Clustering/img6.png" alt="ImGEN 6" width="260" height="240" />
 </p>
 
 <p align="center">
-  <img src="Heirarchical Clustering/img7.png" alt="ImGEN 7" width="320" height="240" style="margin-right: 20px;"/>
+  <img src="Heirarchical Clustering/img7.png" alt="ImGEN 7" width="260" height="240" style="margin-right: 20px;"/>
 </p>
 
 Hierarchical clustering didn't work well with the customer data primarily due to the noise and outliers present in the dataset. The method is sensitive to these irregularities, and as a result, the algorithm tended to create too many clusters, splitting the data into small, less meaningful groupings. Since hierarchical clustering starts with each data point as its own cluster and progressively merges them, noise and outliers can distort the process, causing it to make unnecessary splits or merges. In the case of customer data, where there are likely varying spending patterns, income levels, and other features, the presence of noise likely caused the algorithm to overfit, resulting in excessive clusters that don’t reflect actual customer segments. This made the clustering less effective in capturing meaningful patterns, and the large number of clusters generated didn’t provide useful insights for segmenting the customer base.
