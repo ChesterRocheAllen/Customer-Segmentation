@@ -1,0 +1,139 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.cluster import KMeans
+
+# Load the dataset
+df = pd.read_csv('Customers.csv')
+
+# Encode 'Gender' as 0 and 1 (Male = 0, Female = 1)
+le = LabelEncoder()
+df['Gender'] = le.fit_transform(df['Gender'])
+
+# One-Hot encode 'Profession'
+df = pd.get_dummies(df, columns=['Profession'], drop_first=True)
+
+# Select numeric features for scaling
+numeric_features = ['Age', 'Annual Income ($)', 'Spending Score (1-100)', 'Work Experience', 'Family Size']
+
+# Initialize and fit the StandardScaler on numeric features
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(df[numeric_features])
+
+## Elbow Method for Optimal Clusters
+
+# Range of cluster values to try
+wcss = []
+
+# Try clustering from 1 to 10 clusters
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters=i, random_state=42)
+    kmeans.fit(scaled_data)
+    wcss.append(kmeans.inertia_)
+
+# Plotting the Elbow Graph
+plt.figure(figsize=(8, 6))
+plt.plot(range(1, 11), wcss, marker='o', linestyle='-', color='b')
+plt.title('Elbow Method for Optimal Clusters')
+plt.xlabel('Number of Clusters')
+plt.ylabel('WCSS (Within-Cluster Sum of Squares)')
+plt.xticks(range(1, 11))
+plt.tight_layout()
+plt.show()
+
+# Apply K-Means clustering with 4 clusters
+kmeans = KMeans(n_clusters=4, random_state=42)
+df['Cluster'] = kmeans.fit_predict(scaled_data)
+
+# Inverse transform to get the original values back for plotting
+original_values = scaler.inverse_transform(scaled_data)
+df[numeric_features] = original_values
+
+# Calculate gender distribution by cluster (count of males and females in each cluster)
+gender_distribution = df.groupby(['Cluster', 'Gender']).size().unstack(fill_value=0)
+
+# Group by clusters and get the mean of each feature 
+cluster_summary = df.groupby('Cluster').mean()
+
+# Calculate count of people in each cluster
+cluster_count = df['Cluster'].value_counts()
+
+# Calculate the average age by cluster
+avg_age_by_cluster = df.groupby('Cluster')['Age'].mean()
+
+# Show the cluster summary with original values
+# print(cluster_summary)
+
+# Plot the clusters on a 2D plot (Annual Income vs Spending Score) with original values
+sns.scatterplot(x='Annual Income ($)', y='Spending Score (1-100)', hue='Cluster', palette='Set2', data=df)
+plt.title('Customer Segments')
+plt.xlabel('Annual Income ($)')
+plt.ylabel('Spending Score (1-100)')
+plt.show()
+
+# Select only the profession-related columns (those starting with 'Profession_')
+profession_columns = [col for col in cluster_summary.columns if col.startswith('Profession_')]
+
+# Extract the relevant data for the stacked bar chart
+profession_summary = cluster_summary[profession_columns]
+
+# Plot a stacked bar chart for each cluster with profession proportions
+profession_summary.plot(kind='bar', stacked=True, figsize=(10, 6), colormap='Set2')
+plt.title('Profession Distribution in Each Cluster')
+plt.xlabel('Cluster')
+plt.ylabel('Percentage of Profession')
+plt.legend(title='Profession', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.xticks(rotation=0)
+plt.tight_layout()  # Adjust layout to avoid overlap with the legend
+plt.show()
+
+# Plot a bar chart for income by cluster
+income_by_cluster = cluster_summary['Annual Income ($)']
+income_by_cluster.plot(kind='bar', figsize=(10, 6), color='skyblue')
+plt.title('Average Income by Cluster')
+plt.xlabel('Cluster')
+plt.ylabel('Average Annual Income ($)')
+plt.xticks(rotation=0)
+plt.tight_layout()  # Adjust layout to avoid overlap
+plt.show()
+
+# Plot the average Spending Score by Cluster
+spending_score_by_cluster = cluster_summary['Spending Score (1-100)']
+spending_score_by_cluster.plot(kind='bar', figsize=(10, 6), color='lightgreen')
+plt.title('Average Spending Score by Cluster')
+plt.xlabel('Cluster')
+plt.ylabel('Average Spending Score (1-100)')
+plt.xticks(rotation=0)
+plt.tight_layout()  # Adjust layout to avoid overlap
+plt.show()
+
+# Plot the count of people in each cluster
+plt.figure(figsize=(8, 6))
+cluster_count.plot(kind='bar', color='skyblue', edgecolor='black')
+plt.title('Number of People in Each Cluster', fontsize=14)
+plt.xlabel('Cluster', fontsize=12)
+plt.ylabel('Count of People', fontsize=12)
+plt.xticks(rotation=0)
+plt.tight_layout()  # Adjust layout to avoid overlap
+plt.show()
+
+# Plot the average age by cluster
+plt.figure(figsize=(8, 6))
+avg_age_by_cluster.plot(kind='bar', color='lightcoral', edgecolor='black')
+plt.title('Average Age by Cluster', fontsize=14)
+plt.xlabel('Cluster', fontsize=12)
+plt.ylabel('Average Age', fontsize=12)
+plt.xticks(rotation=0)
+plt.tight_layout()  # Adjust layout to avoid overlap
+plt.show()
+
+# Plot the gender distribution by cluster (Males and Females)
+gender_distribution.plot(kind='bar', stacked=True, figsize=(10, 6), color=['skyblue', 'lightcoral'])
+plt.title('Gender Distribution by Cluster')
+plt.xlabel('Cluster')
+plt.ylabel('Count of Gender')
+plt.xticks(rotation=0)
+plt.legend(title='Gender', labels=['Male', 'Female'], bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()  # Adjust layout to avoid overlap with the legend
+plt.show()
